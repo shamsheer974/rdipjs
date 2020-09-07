@@ -1,0 +1,48 @@
+<html>
+<head>
+<script src="demo.js"></script>
+<title>Palindrome using JS</title>
+<style>
+input{
+padding: 20px;
+}
+</style>
+<script>
+function TestFunction()
+{
+var InputStr = document.getElementById('tbox').value; //here we are calling checkingPalindrome() function and passing a string into it
+var resStr = checkingPalindrome(InputStr);
+alert('The input string "'+InputStr+'" is "'+resStr+'"'); // This will allow a //rectangular box to be popped up on the screen to display result
+}
+function checkingPalindrome(InputStr)
+{
+var origString;
+
+InputStr = InputStr.toLowerCase();
+
+origString= InputStr;
+//here we are reversing the entered string
+InputStr = InputStr.split(''); 
+InputStr = InputStr.reverse(); 
+InputStr = InputStr.join(''); 
+var revString = InputStr;
+
+if(origString == revString){
+return 'Palindrome string'; 
+}
+else
+{
+return 'not a Palindrome string';
+}
+}
+</script>
+</head>
+<body>
+<form action="" method="get"> &nbsp
+<h3 align='center' >Javascript Program to find if the number is Palindrome or not: </h3> &nbsp
+<p align='center'><input type="text" id="tbox" placeholder="Enter the string here" />
+<input type="button" onclick="TestFunction()" value="Click here" /></p>
+</form>
+</body>
+</html>
+
